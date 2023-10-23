@@ -91,7 +91,7 @@ public final class PokerHand implements Comparable<PokerHand> {
         return Integer.compare(combination.getRating(), pokerHand.combination.getRating());
     }
 
-    public boolean isValidHand(String cards) {
+    private boolean isValidHand(String cards) {
         return cards != null && cards.matches("([2-9TJQKA][HSCD]\\s){4}[2-9TJQKA][HSCD]") &&
                 Arrays.stream(cards.split(" ")).collect(Collectors.toSet()).size() == 5;
     }
